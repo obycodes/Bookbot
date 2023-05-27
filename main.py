@@ -1,6 +1,7 @@
 # Read the file
 
-with open("books/frankenstein.txt", "r") as file:
+file_path = "books/frankenstein.txt"
+with open(file_path, "r") as file:
     data = file.read()
 # count the number of words in the file 
     word_count = len(data.split())
@@ -23,7 +24,7 @@ with open("books/frankenstein.txt", "r") as file:
 # covert dictionary to list of tuples and sort in alphabetical order
     alpha_num_sorted = sorted(list(alpha_num.items()), key=lambda x: (x[0], x[1]))
 
-    print("--- Begin report of books/frankenstein.txt ---")
+    print(f"--- Begin report of {file_path} ---")
     print(f"{word_count} found in the document\n")
 
 # Loop through list of sorted list of tuples and print characters with character counts.
@@ -33,7 +34,7 @@ with open("books/frankenstein.txt", "r") as file:
         output = "The '{}' character was found {} times".format(char_element, count_element)
        
         print(output)
-        
+
     print("--- End report ---")
 
    
